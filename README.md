@@ -1,6 +1,6 @@
 # 🌍𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗬𝗼𝘂𝗿 𝗡𝗲𝘅𝘁 𝗔𝗱𝘃𝗲𝗻𝘁𝘂𝗿𝗲!🌍
 
-Explore the world with ease and 𝗱𝗶𝘀𝗰𝗼𝘃𝗲𝗿 𝗰𝘂𝗿𝗮𝘁𝗲𝗱 𝘁𝗼𝘂𝗿𝘀, stunning destinations, and unforgettable experiences. Whether you're a thrill-seeker or a relaxation enthusiast, your perfect journey starts here. 🧳💻
+Explore the world with ease and 𝗱𝗶𝘀𝗰𝗼𝘃𝗲𝗿 𝗰𝘂𝗿𝗮𝘁𝗲𝗱 𝘁𝗼𝘂𝗿𝘀, stunning destinations, and unforgettable experiences. Whether you're a thrill-seeker or a relaxation enthusiast, your perfect journey starts here. 🧳
 
 💻𝗟𝗲𝘁 𝗺𝗲 𝘁𝗮𝗸𝗲 𝘆𝗼𝘂 𝗼𝗻 𝗮 𝘁𝗼𝘂𝗿 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗽𝗿𝗼𝗷𝗲𝗰𝘁'𝘀 𝗸𝗲𝘆 𝗳𝗲𝗮𝘁𝘂𝗿𝗲𝘀 :
 
@@ -13,6 +13,7 @@ Explore the world with ease and 𝗱𝗶𝘀𝗰𝗼𝘃𝗲𝗿 𝗰𝘂𝗿�
 🌐 𝗘𝘅𝗽𝗹𝗼𝗿𝗲: Let us help you discover the perfect escape for unforgettable memories.
 
 📞 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝗨𝘀: Get in touch with us for any inquiries or assistance with your travel plans.
+
 
 🎯 𝗪𝗵𝗮𝘁 𝗺𝗮𝗸𝗲𝘀 𝗶𝘁 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝗮𝗹 𝗮𝗻𝗱 𝗲𝗻𝗷𝗼𝘆𝗮𝗯𝗹𝗲?
 
