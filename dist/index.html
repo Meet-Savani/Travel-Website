@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="shortcut icon" href="/assets/Travel%20Logo-B84LFI2w.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" crossorigin href="/assets/index-CzLi0Nb6.css">
+</head>
+<body>
+    <div id="home" class="bg-black m-0 p-0 relative">
+        <div class="bg-hero-page bg-center h-full bg-cover bg-no-repeat relative">
+            <nav class="p-3 flex bg-slate-700 justify-between items-center h-14 fixed top-0 w-full z-[100]">
+                <!-- Logo  -->
+                <a href="#" id="logo" class="w-16">
+                    <img src="/assets/Logo-BVBLEQQz.png" alt="Company Logo" class="object-cover" loading="lazy">
+                </a>
+                <!-- Navigation Menu -->
+                <ul id="nav-menu" class="hidden md:flex md:space-x-8">
+                    <li class="text-xl text-white px-4 py-2">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li class="text-xl text-white px-4 py-2">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="text-xl text-white px-4 py-2">
+                        <a href="#popular">Popular</a>
+                    </li>
+                    <li class="text-xl text-white px-4 py-2">
+                        <a href="#explore">Explore</a>
+                    </li>
+                    <li class="text-xl text-white px-4 py-2">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- Search and user icon  -->
+                <div id="search-user" class="md:flex items-center gap-2 hidden">
+                    <input type="text" name="search" id="search" class="px-2 py-1 rounded-lg text-sm outline-none w-36" placeholder="USA">
+                    <i class="fa-solid fa-magnifying-glass -ml-8"></i>
+                    <i id="user-icon" class="fa-solid fa-user mx-4 my-2 mr-6 text-white text-xl"></i>
+                </div>
+                <!-- Menu Button  -->
+                <button class="p-2 md:hidden" onclick="handleMenuBar()">
+                    <i class="fa-solid fa-bars text-2xl text-slate-100"></i>
+                </button>
+
+                <!-- Navigation Dialogue  -->
+                <div id="nav-dialogue" class="fixed inset-0 p-3 bg-slate-700 z-10 transform translate-x-full transition-transform duration-700 ease-in-out md:hidden">
+                    <!-- Dialogue Header  -->
+                    <div id="nav-bar" class="flex justify-between">
+                        <a href="#" id="logo" class="w-16">
+                            <img src="/assets/Logo-BVBLEQQz.png" alt="Company Logo" class="object-cover">
+                        </a>
+                        <button class="p-2" onclick="handleMenuBar()">
+                            <i class="fa-solid fa-xmark text-2xl text-slate-100"></i>
+                        </button>
+                    </div>
+        
+                    <!-- Navigation Links  -->
+                    <div class="mt-6 relative">
+                        <a href="#home" class="font-medium m-2 p-3 text-white hover:bg-gray-50 hover:text-black block rounded-lg" onclick="closeMenu()">Home</a>
+                        <a href="#about" class="font-medium m-2 p-3 text-white hover:bg-gray-50 hover:text-black block rounded-lg" onclick="closeMenu()">About</a>
+                        <a href="#popular" class="font-medium m-2 p-3 text-white hover:bg-gray-50 hover:text-black block rounded-lg" onclick="closeMenu()">Popular</a>
+                        <a href="#explore" class="font-medium m-2 p-3 text-white hover:bg-gray-50 hover:text-black block rounded-lg" onclick="closeMenu()">Explore</a>
+                        <a href="#contact" class="font-medium m-2 p-3 text-white hover:bg-gray-50 hover:text-black block rounded-lg" onclick="closeMenu()">Contact</a>
+                    </div>
+                    <!-- Divider  -->
+                    <div class="h-[2px] bg-white"></div>
+                    <!-- Search  -->
+                    <div id="search-user" class="flex items-center w-full gap-2 m-3">
+                        <input type="text" name="search" id="search" class="m-2 px-2 py-1 rounded-lg text-sm outline-none w-10/12" placeholder="USA">
+                        <i class="fa-solid fa-magnifying-glass -ml-10"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Sign In page -->
+            <div id="signInBox" class="bg-gradient-to-r from-cyan-400 to-blue-600 rounded-lg top-10 md:top-16 p-6 w-[550px] h-[400px] md:h-[470px] fixed hidden sm:left-36 md:left-1/4 z-[102]">
+                <h2 class="text-2xl md:text-4xl font-semibold text-center p-2 text-black mb-4 md:mb-8 border-b-2 rounded-lg shadow-lg">Sign In</h2>
+                
+                <form action="#" method="POST">
+                    <div class="mb-3 md:mb-6">
+                        <label for="email" class="block text-sm md:text-md font-medium text-zinc-800">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required autofocus class="mt-2 block w-11/12 px-4 py-2 border border-gray-300 rounded-md outline-none">
+                    </div>
+                    <div class="mb-4 md:mb-8">
+                        <label for="password" class="block text-sm md:text-md font-medium text-zinc-800">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required 
+                            class="mt-2 block w-11/12 px-4 py-2 border border-gray-300 rounded-md outline-none">
+                    </div>
+                    <button type="submit" 
+                        class="w-11/12 text-xl font-semibold bg-cyan-500 text-white py-2 rounded-lg hover:bg-cyan-600 transition-all duration-300">Sign In</button>
+                </form>
+        
+                <div class="mt-6 text-center">
+                    <p id="signUpLink" class="text-md text-white">Don't have an account? <a href="#" class="text-slate-800 font-semibold hover:underline">Sign Up</a></p>
+                </div>
+            </div>
+
+            <!-- Sign Up page -->
+            <div id="signUpBox" class="bg-gradient-to-r from-cyan-400 to-blue-600 rounded-lg top-10 md:top-16 p-6 w-[550px] h-[400px] md:h-[470px] fixed hidden sm:left-36 md:left-1/4 z-[101]">
+                <h2 class="text-2xl md:text-4xl font-semibold text-center p-2 text-black mb-4 md:mb-6 border-b-2 rounded-lg shadow-lg">Sign Up</h2>
+
+                <form action="#" method="POST">
+                    <div class="mb-2 md:mb-4">
+                        <label for="fullName" class="block text-sm md:text-md font-medium text-zinc-800">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autofocus class="mt-1 md:mt-2 block w-11/12 px-4 py-2 border border-gray-300 rounded-md outline-none">
+                    </div>
+                    <div class="mb-2 md:mb-4">
+                        <label for="email" class="block text-sm md:text-md font-medium text-zinc-800">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required 
+                            class="mt-1 md:mt-2 block w-11/12 px-4 py-2 border border-gray-300 rounded-md outline-none">
+                    </div>
+                    <div class="mb-3 md:mb-6">
+                        <label for="password" class="block text-sm md:text-md font-medium text-zinc-800">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required 
+                            class="mt-1 md:mt-2 block w-11/12 px-4 py-2 border border-gray-300 rounded-md outline-none">
+                    </div>
+                    <button type="submit" 
+                        class="w-11/12 text-xl font-semibold bg-cyan-500 text-white py-2 rounded-lg hover:bg-cyan-600 transition-all duration-300">
+                        Sign Up
+                    </button>
+                </form>
+        
+                <div class="mt-3 text-center">
+                    <p id="signInLink" class="text-md text-white">Already have an account? <a href="#" class="text-slate-800 font-semibold hover:underline">Sign In</a></p>
+                </div>
+            </div>
+
+
+            <!-- Home Page  -->
+            <section class="mt-10 ml-8 md:mt-14 md:ml-16 h-full pt-12 relative">
+                <h4 class="text-white md:text-2xl font-semi-bold">Welcome to Travel World</h4>
+                <h1 class="text-white text-3xl lg:text-6xl sm:text-4xl mt-3 font-bold leading-[1.2]">Explore <br>The World</h1>
+                <p class="text-white mt-2 max-w-[550px] leading-6">
+                    <span class="font-bold">Discover Your Next Adventure!</span>
+                    From breathtaking beaches to majestic mountains, our travel guides, tips, and curated experiences will inspire your next journey. Start planning your unforgettable getaway today!"</p>
+                <button class="bg-gray-600 px-8 py-4 text-white mt-4 flex items-center gap-3 rounded-lg group hover:bg-gray-700 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <span class="text-xl font-semibold">Book a Journey</span>
+                    <i class="fa-solid fa-arrow-right pt-1 group-hover:translate-x-2 transition-all duration-200"></i>
+                </button>
+            </section>
+
+            <!-- box-menu  -->
+            <div class="flex flex-wrap lg:flex-nowrap gap-y-6 justify-evenly mt-8 pb-4 lg:gap-2 relative">
+                <div class="h-[210px] w-[300px] rounded-md overflow-hidden relative">
+                    <div class="card relative">
+                        <img src="/assets/USA-BDgTCgBl.jpg" alt="USA" class="h-[210px] w-[300px]  rounded-md hover:scale-125 transition-all duration-500">
+                        <span  class="card-title text-2xl font-semibold text-white absolute left-6 bottom-2 px-4 py-2">USA</span>
+                    </div>
+                    <div class="hidden-content w-full h-full absolute top-0 px-4 py-2 hidden bg-black bg-opacity-40 transition-all duration-700">
+                        <h2 class="text-white text-xl font-semibold">USA</h2>
+                        <p class="text-white text-[14px]">The USA is known for its diverse landscapes, including iconic landmarks like the Grand Canyon, Statue of Liberty, and Yellowstone National Park. It offers a rich cultural experience with vibrant cities, historic sites, and world-famous attractions.</p>
+                    </div>
+                </div>
+
+                <div class="h-[210px] w-[300px] rounded-md overflow-hidden relative">
+                    <div class="card relative">
+                        <img src="/assets/Canada-C6MMCwhs.jpg" alt="Canada" class="h-[210px] w-[300px]  rounded-md hover:scale-125 transition-all duration-500">
+                        <span class="card-title text-2xl font-semibold text-white absolute left-6 bottom-2 px-4 py-2">Canada</span>
+                    </div>
+                    <div class="hidden-content w-full h-full absolute top-0 px-4 py-2 hidden bg-black bg-opacity-40 transition-all duration-700">
+                        <h2 class="text-white text-xl font-semibold">Canada</h2>
+                        <p class="text-white text-[14px]">Canada is known for its stunning natural beauty, including vast forests, majestic mountains, and iconic sites like Niagara Falls. The country offers a welcoming atmosphere with a diverse culture and vibrant cities such as Toronto and Vancouver.</p>
+                    </div>
+                </div>
+
+                <div class="h-[210px] w-[300px] rounded-md overflow-hidden relative">
+                    <div class="card relative">
+                        <img src="/assets/Italy-NOwl6fRr.jpg" alt="Italy" class="h-[210px] w-[300px]  rounded-md hover:scale-125 transition-all duration-500">
+                        <span class="card-title text-2xl font-semibold text-white absolute left-6 bottom-2 px-4 py-2">Italy</span>
+                    </div>
+                    <div class="hidden-content w-full h-full absolute top-0 px-4 py-2 hidden bg-black bg-opacity-40 transition-all duration-700">
+                        <h2 class="text-white text-xl font-semibold">Italy</h2>
+                        <p class="text-white text-[14px]">Italy is renowned for its historic landmarks, including the Colosseum, the Leaning Tower of Pisa, and the canals of Venice. Known for its delicious cuisine, art, and fashion, Italy offers a rich cultural experience in cities like Rome, Florence, and Milan.</p>
+                    </div>
+                </div>
+                
+                <div class="h-[210px] w-[300px] rounded-md overflow-hidden relative">
+                    <div class="card relative">
+                        <img src="/assets/Spain-CaesR7qU.jpg" alt="Spain" class="h-[210px] w-[300px]  rounded-md hover:scale-125 transition-all duration-500">
+                        <span class="card-title text-2xl font-semibold text-white absolute left-6 bottom-2 px-4 py-2">Spain</span>
+                    </div>
+                    <div class="hidden-content w-full h-full absolute top-0 px-4 py-2 hidden bg-black bg-opacity-40 transition-all duration-700">
+                        <h2 class="text-white text-xl font-semibold">Spain</h2>
+                        <p class="text-white text-[14px]">Spain is famous for its rich history, vibrant culture, and stunning architecture, including landmarks like the Sagrada Familia and Alhambra. Its diverse regions offer beautiful beaches, bustling cities like Barcelona, and charming towns with unique traditions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- About Us -->
+        <section id="about" class="flex flex-col h-full items-center lg:flex-row justify-between lg:h-[100vh] max-w-[1000px] mx-auto relative">  
+            <!-- left part -->
+            <div class="lg:mt-24 ml-16 mt-12 relative">
+                <h2 class="text-5xl text-white font-semi-bold leading-[1.2]">Learn More <br>About Travel</h2>
+                <p class="text-slate-400 mt-6 max-w-[400px]">
+                    We are passionate travelers dedicated to helping you explore the world with ease and excitement. Our mission is to provide insightful guides, travel tips, and unique experiences to make your adventures unforgettable. Whether you're seeking a tranquil escape or an adrenaline-filled journey, we're here to inspire and guide you every step of the way.
+                </p>
+                <button class="bg-gray-600 px-8 py-4 text-white mt-8 flex items-center gap-3 rounded-lg group hover:bg-gray-700 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <span class="text-xl font-semibold">Explore Travel</span>
+                    <i class="fa-solid fa-arrow-right pt-1 group-hover:translate-x-2 transition-all duration-200"></i>
+                </button>
+            </div>
+
+            <!-- right part -->
+            <div class="lg:mt-24 relative mt-12">
+                <div class="w-[350px] h:[200px] md:w-[500px] md:h-[400px] overflow-hidden rounded-lg">
+                    <img src="/assets/About-T3dUHnOB.jpg" alt="About Us" class="w-[350px] h:[200px] md:w-[500px] md:h-[400px] rounded-lg hover:scale-125 transition-all duration-1000 overflow-hidden">
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Section  -->
+        <section id="popular" class="h-full pt-14 pb-4 max-w-[1000px] mx-auto relative">
+            <div class="mb-10">
+                <h2 class="text-4xl text-center text-white">Enjoy The Beauty<br> Of The World</h2>
+            </div>
+
+            <!-- Card menu  -->
+            <div id="cards-container" class="flex justify-evenly pt-4 pl-2 flex-wrap gap-y-8 gap-x-4">
+
+                <!-- Card - 1 -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Mcway%20Fall%20USA-BiwuqRSk.jpg" alt="McWay Falls" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">McWay Falls</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>California, United States</span>
+                    </h4>
+                </div>
+
+                <div id="modal-1" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">McWay Falls</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">McWay Falls is an 80-foot waterfall located in Julia Pfeiffer Burns State Park, Big Sur, California. It cascades directly into the Pacific Ocean, creating a stunning and picturesque scene. Accessible via a short trail, the waterfall offers breathtaking coastal views. Although visitors cannot reach the beach, the scenic overlook provides a perfect spot for photos. Known as one of California's most iconic landmarks, McWay Falls is a must-see for nature lovers and travelers exploring the Big Sur coast.</p>
+                    </div>
+                </div>
+
+                <!-- Card - 2  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Abu%20Dhabi%20Dubai-TC4k7BBH.jpg" alt="Atlantis, The Palm" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Atlantis, The Palm</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>United Arab Emirates</span>
+                    </h4>
+                </div>
+
+                <div id="modal-2" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Atlantis, The Palm</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Atlantis, The Palm is a luxury resort located on the iconic Palm Jumeirah in Dubai. It features stunning ocean-themed architecture and offers world-class amenities, including the Aquaventure Waterpark, The Lost Chambers Aquarium, and a variety of fine dining restaurants. The resort provides luxurious accommodations with breathtaking views of the Arabian Gulf. Known for its opulence and grandeur, Atlantis, The Palm is a top destination for travelers seeking an unforgettable luxury experience in Dubai.</p>
+                    </div>
+                </div>
+                
+                <!-- Card - 3  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Paro-BO3fCseI.jpg" alt="Paro Taktsang" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Paro Taktsang</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Bhutan</span>
+                    </h4>
+                </div>
+
+                <div id="modal-3" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Paro Taktsang</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Paro Taktsang, also known as the Tiger's Nest Monastery, is a sacred Buddhist site perched on a cliffside in the Paro Valley, Bhutan. Built in 1692, it is renowned for its stunning architecture and breathtaking views. The monastery is accessible by a challenging hike, offering spiritual and scenic rewards to visitors. Legend has it that Guru Rinpoche flew to this location on the back of a tigress, hence its name. Paro Taktsang is a must-visit for those exploring Bhutan's rich cultural heritage and spiritual traditions.</p>
+                    </div>
+                </div>
+                
+                <!-- Card - 4  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Bali-CdGbT66V.jpg" alt="Tanah Lot" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Tanah Lot</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Bali, Indonesia</span>
+                    </h4>
+                </div>
+
+                <div id="modal-4" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Tanah Lot</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Tanah Lot is a famous sea temple located on a rock formation off the coast of Bali, Indonesia. Known for its stunning sunsets, the temple is one of Bali's most iconic landmarks. It holds great spiritual significance for the Balinese and is dedicated to sea gods. Accessible during low tide, the temple offers a picturesque setting with waves crashing around its base. Tanah Lot is a must-visit for those exploring Bali's rich cultural heritage and natural beauty.</p>
+                    </div>
+                </div>
+
+                <!-- Card - 5  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Barcelona-CMABAlmH.jpg" alt="Park Guell" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Park Guell</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Barcelona, Spain</span>
+                    </h4>
+                </div>
+
+                <div id="modal-5" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px]  hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Park Guell</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Park Guell is a vibrant public park in Barcelona, Spain, designed by the famous architect Antoni Gaudi. Known for its colorful mosaics, whimsical structures, and organic shapes, the park showcases Gaudi's unique style. It offers stunning views of the city and is a UNESCO World Heritage Site. Originally intended as a housing project, it was later converted into a public park. Park Guell is a must-visit for art and architecture enthusiasts exploring Barcelona.</p>
+                    </div>
+                </div>
+
+                <!-- Card - 6  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Thailand-DiX51yYh.jpg" alt="Phi Phi Islands" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Phi Phi Islands</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Thailand</span>
+                    </h4>
+                </div>
+
+                <div id="modal-6" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Phi Phi Islands</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">The Phi Phi Islands are a stunning archipelago in Thailand, known for their crystal-clear waters, white sandy beaches, and dramatic limestone cliffs. Located in the Andaman Sea, they are a popular destination for snorkeling, diving, and island-hopping tours. The islands gained international fame from the movie "The Beach," filmed at Maya Bay on Phi Phi Leh. With vibrant marine life and breathtaking scenery, the Phi Phi Islands are a must-visit for nature lovers and adventure seekers.</p>
+                    </div>
+                </div>
+
+                <!-- Card - 7  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Madrid-DDCcoxF_.jpg" alt="Royal Palace of Madrid" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Royal Palace of Madrid</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Madrid, Spain</span>
+                    </h4>
+                </div>
+
+                <div id="modal-7" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Royal Palace of Madrid</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">The Royal Palace of Madrid is the official residence of the Spanish royal family, located in the heart of Madrid. Built in the 18th century, it is a grand architectural masterpiece with over 3,000 rooms, showcasing luxurious interiors and beautiful gardens. Visitors can explore the palace's impressive halls, royal chambers, and museums, which house a vast collection of art and historical artifacts. The palace is also used for official ceremonies and events. It remains a symbol of Spain's rich history and royal heritage.</p>
+                    </div>
+                </div>
+
+                <!-- Card - 8  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Melbourne-DAvMciqb.jpg" alt="Melbourne" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Melbourne</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Victoria, Australia</span>
+                    </h4>
+                </div>
+
+                <div id="modal-8" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Melbourne</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Melbourne is a vibrant city in Australia, known for its eclectic blend of culture, art, and history. It is famous for its diverse food scene, street art, and thriving coffee culture. Melbourne offers a mix of modern architecture and historic landmarks, including Federation Square and the Royal Botanic Gardens. The city is also home to numerous festivals, sports events, and shopping districts. With its unique charm, Melbourne is a must-visit destination for travelers seeking both urban excitement and cultural experiences.</p>
+                    </div>
+                </div>
+                
+                <!-- Card - 9  -->
+                <div class="flex flex-col relative">
+                    <div class="relative">
+                        <div class="card-btn overflow-hidden rounded-lg relative">
+                            <img src="/assets/Swiss%20Alps-C4LCbyTM.jpg" alt="Grimsel Pass" class="w-[250px] h-[170px] md:w-[300px] md:h-[200px] rounded-lg hover:scale-[1.4] transition-all duration-500 overflow-hidden">
+                        </div>
+                        <div class="hidden-button w-full h-full hidden absolute top-0 bg-black bg-opacity-40 transition-all duration-700">
+                            <button class="text-xl font-semibold px-4 py-2 border text-white border-white rounded-lg h-[40px] absolute bottom-4 left-10 md:left-20 flex items-center">Read more...</button>
+                        </div>
+                    </div>
+                    <h2 class="text-white text-lg font-semibold mt-2">Grimsel Pass</h2>
+                    <h4 class="text-slate-500 flex items-center gap-3 mt-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Switzerland</span>
+                    </h4>
+                </div>
+
+                <div id="modal-9" class="modal fixed top-20 w-[300px] h-[300px] sm:w-[500px] md:w-[700px] md:h-[600px] hidden z-[100] rounded-lg">
+                    <div class="bg-slate-700 bg-opacity-70 rounded-lg p-6 relative">
+                        <h2 class="text-xl md:text-2xl text-white font-bold">Grimsel Pass</h2>
+                        <span class="absolute top-2 right-4 text-2xl md:text-4xl cursor-pointer text-white">&times;</span>
+                        <p class="text-white font-medium text-sm md:text-lg pt-4 leading-[1.5]">Grimsel Pass is a high mountain pass in the Swiss Alps, connecting the canton of Bern with the canton of Valais. Situated at an altitude of 2,164 meters, it offers breathtaking views of snow-capped peaks, glaciers, and crystal-clear lakes. The pass is popular among travelers for scenic drives and hiking trails. It also serves as a gateway to the famous Aare Gorge and several alpine resorts. Grimsel Pass is a must-see for nature lovers and adventure seekers exploring Switzerland's stunning landscapes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Explore section  -->
+        <section id="explore" class="h-[100vh] relative bg-paradise bg-cover">
+            <div class="md:pt-44 md:pl-36 pt-32 sm:pl-16 pl-6">
+                <h2 class="text-5xl font-semi-bold leading-[1.2] text-white">Explore The <br>Best Paradises</h2>
+                <p class="text-white mt-4 md:w-[500px] p-2">Embark on a journey to some of the world's most breathtaking paradises, where crystal-clear waters meet pristine sands, and lush landscapes offer a serene escape. Discover hidden gems, immerse yourself in vibrant cultures, and create memories that last a lifetime. Whether it's a tropical island, a mountain retreat, or a charming coastal town, let us guide you to your perfect paradise.</p>
+            </div>
+        </section>
+
+        <!-- Contact  -->
+        <section id="contact" class="md:h-[100vh] h-full relative max-w-[1000px] mx-auto">
+            <div class="flex md:flex-row md:justify-between flex-col items-center">
+                <!-- left part  -->
+                <div class="lg:mt-28 mt-14">
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="/assets/Contact-LynHPzle.jpg" alt="Paradise" class="w-[400px] h-[300px] md:w-[500px] md:h-[400px] rounded-lg hover:scale-125 transition-all duration-500 overflow-hidden">
+                    </div>
+                </div>
+
+                <!-- right part  -->
+                <div class="lg:mt-32 mt-16">
+                    <h2 class="text-4xl font-semibold leading-[1.2] text-white">Your Journey <br>Starts Here</h2>
+                    <p class="text-slate-300 mt-4 w-[350px]">Have questions or need travel advice? Reach out to us, and we'll be happy to assist you in planning your next adventure.</p>
+
+                    <div class="mt-12">
+                        <input type="text" name="email" id="email" placeholder="Enter your email" class="px-4 py-2 rounded-md bg-zinc-700 border-none outline-none caret-white text-white">
+                        <button class="bg-gray-600 px-8 py-4 text-white mt-8 flex items-center gap-3 rounded-lg group hover:bg-gray-700 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <span class="text-xl font-semibold">Subscribe Our Newsletter</span>
+                            <i class="fa-solid fa-arrow-right pt-1 group-hover:translate-x-2 transition-all duration-200"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="h-full lg:mt-3 mt-6 flex flex-col items-center px-4">
+
+            <div class="flex justify-center my-4">
+                <a href="#home">
+                    <img src="/assets/Logo-BVBLEQQz.png" alt="Company Logo" class="w-[150px] hover:scale-125 transition-all duration-500">
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 items-center justify-center sm:grid-cols-3 gap-y-6 gap-x-4 max-w-[1000px]">
+                <div>
+                    <h3 class="text-xl font-semibold text-white">Services</h3>
+                    <ul class="mt-3">
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Travel Insurance</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Destination Guides</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Travel Planning</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Visa Assistant</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Email Marketing</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Branding</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-white">About</h3>
+                    <ul class="mt-3">
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Company Overview</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Our Story</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Our Team</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Benefits</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Awards & Recognition</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-white">Help</h3>
+                    <ul class="mt-3">
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Customer Support</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">FAQs</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Refund & Cancellation Policy</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Travel Documents & Visa Help</a>
+                        </li>
+                        <li class="text-slate-300 hover:underline">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Social Media Links  -->
+            <div class="flex gap-8 items-center lg:mt-8 mt-4 justify-center">
+                <div class="p-2 group">
+                    <a href="https://www.instagram.com/accounts/login/">
+                        <i class="fa-brands fa-instagram text-4xl text-white group-hover:-translate-y-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+
+                <div class="p-2 group">
+                    <a href="https://www.linkedin.com/login">
+                        <i class="fa-brands fa-linkedin text-4xl text-white group-hover:-translate-y-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+
+                <div class="p-2 group">
+                    <a href="https://telegram.org/">
+                        <i class="fa-brands fa-telegram text-4xl text-white group-hover:-translate-y-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+
+                <div class="p-2 group">
+                    <a href="https://x.com/i/flow/login?lang=en">
+                        <i class="fa-brands fa-twitter text-4xl text-white group-hover:-translate-y-2 transition-all duration-300"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright Section  -->
+            <div class="flex items-center justify-center lg:mt-6 mt-4 mb-4">
+                <div class="text-md md:text-xl font-medium text-white tracking-widest">
+                    &copy; Copyright by <a href="#home" class="font-bold">Meet Savani</a> @2025
+                </div>
+            </div>
+
+        </footer>
+        
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
